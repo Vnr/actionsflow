@@ -1,7 +1,11 @@
 on:
-  schedule:
+  rss:
+    url: https://hnrss.org/newest?points=300
+      config:
+        every: "*/5 * * * *"
+  #schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron:  '*/15 * * * *'
+    #- cron:  '*/15 * * * *'
 jobs:
   request:
     name: Make a HTTP Request
