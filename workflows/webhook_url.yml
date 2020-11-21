@@ -1,6 +1,6 @@
 on:
   webhook:
-    method: post
+    #method: post
 jobs:
   request:
     name: Make a HTTP Request
