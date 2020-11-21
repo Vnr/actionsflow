@@ -4,7 +4,8 @@ on:
       let items = [Math.random()*10];
       return items;
     config:
-      every: "*/5 * * * *"
+      #every: "*/5 * * * *"
+      every: "* 12 * * *"
   #schedule:
     # * is a special character in YAML so you have to quote this string
     #- cron:  '*/15 * * * *'
