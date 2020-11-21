@@ -1,0 +1,18 @@
+on:
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '*/15 * * * *'
+jobs:
+  request:
+    name: Make a HTTP Request
+    runs-on: ubuntu-latest
+    steps:
+      - name: Make a HTTP Request
+        uses: actionsflow/axios@v1
+        with:
+          url: https://obd-search.azurewebsites.net/test
+          method: POST
+          body: |
+            {
+              "hi": "buddy"
+            }
