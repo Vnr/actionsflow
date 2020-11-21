@@ -1,7 +1,7 @@
 on:
   script:
     run: |
-      let items = [1, 2];
+      let items = [Math.random()*10];
       return items;
     config:
       every: "*/5 * * * *"
