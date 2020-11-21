@@ -1,6 +1,8 @@
 on:
-  rss:
-    url: https://hnrss.org/newest?points=300
+  script:
+    run: |
+      let items = [1, 2];
+      return items;
     config:
       every: "*/5 * * * *"
   #schedule:
