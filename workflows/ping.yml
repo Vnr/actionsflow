@@ -1,8 +1,8 @@
 on:
   rss:
     url: https://hnrss.org/newest?points=300
-      config:
-        every: "*/5 * * * *"
+    config:
+      every: "*/5 * * * *"
   #schedule:
     # * is a special character in YAML so you have to quote this string
     #- cron:  '*/15 * * * *'
