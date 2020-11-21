@@ -1,0 +1,19 @@
+on:
+  webhook:
+    method: post
+jobs:
+  request:
+    name: Make a HTTP Request
+    runs-on: ubuntu-latest
+    steps:
+      - name: Make a HTTP Request
+        uses: actionsflow/axios@v1
+        with:
+          url: https://obd-search.azurewebsites.net/test
+          method: POST
+          body: |
+            {
+              "method": ${{ on.webhook.outputs.method }}, 
+              "body": ${{ toJson(on.webhook.outputs.body) }},
+              "headers":${{ toJson(on.webhook.outputs.headers) }}
+            }
