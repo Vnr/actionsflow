@@ -23,8 +23,8 @@ jobs:
           message: |
             Test github
             #The ${{ github.event_name }} event triggered final step.
-            *bold \*text*
-            _italic \*text_
+            **bold text**
+            _italic text_
             __underline__
             ~strikethrough~
             *bold _italic bold ~italic bold strikethrough~ __underline italic bold___ bold*
