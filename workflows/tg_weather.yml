@@ -24,10 +24,10 @@ jobs:
           format: html
           message: |
             <a href="http://www.example.com/">new [Тест]</a>
-            <i>GITHUB_REPOSITORY</i> 	${{ repo }}
-            GITHUB_ACTOR 	${{ repo.namespace }}
-            GITHUB_SHA 	${{ commit.sha }}
-            GITHUB_REF 	${{ commit.ref }}
+            <i>GITHUB_REPOSITORY</i>
+            GITHUB_ACTOR
+            GITHUB_SHA
+            GITHUB_REF
             GITHUB_WORKFLOW 	${{ github.workflow }}
             GITHUB_ACTION 	${{ github.action_path }}
             GITHUB_EVENT_NAME 	${{ github.event_name }}
