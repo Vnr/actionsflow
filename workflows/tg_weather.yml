@@ -23,6 +23,7 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
             The ${{ github.event_name }} event triggered final step.
-            It might rain today,  the temperature is: ${{on.weather.outputs.daily[0].temp.day}}�, ${{on.weather.outputs.daily[0].weather[0].description}}
+            new Тест
+            It might rain today,  the temperature is: ${{on.weather.outputs.daily[0].temp.day}}°, ${{on.weather.outputs.daily[0].weather[0].description}}
             ####
-            The weather is ${{on.weather.outputs.current.weather[0].description}} now, ${{on.weather.outputs.daily[0].temp.min}}~${{on.weather.outputs.daily[0].temp.min}}�, fell like ${{ on.weather.outputs.current.feels_like }}�, uv: ${{ on.weather.outputs.current.uvi }}
+            The weather is ${{on.weather.outputs.current.weather[0].description}} now, ${{on.weather.outputs.daily[0].temp.min}}~${{on.weather.outputs.daily[0].temp.min}}°, fell like ${{ on.weather.outputs.current.feels_like }}°, uv: ${{ on.weather.outputs.current.uvi }}
