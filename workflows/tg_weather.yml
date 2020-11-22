@@ -21,16 +21,11 @@ jobs:
       - name: Send a telegram message
         uses: appleboy/telegram-action@master
         with:
-          to: ${{ secrets.TELEGRAM_TO }}
+          to: ${{ secrets.TELEGRAM_CHANNEL }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           format: html
           message: |
             <a href="http://www.example.com/">[Тест] new</a>
-            GITHUB_WORKFLOW 	${{ github.workflow }}
-            GITHUB_ACTION 	${{ github.action_path }}
-            GITHUB_EVENT_NAME 	${{ github.event_name }}
-            GITHUB_EVENT_PATH 	${{ github.event_path }}
-            GITHUB_WORKSPACE 	${{ github.workspace }}
             The ${{ github.event_name }} event triggered final step.
             <pre><code class="language-python">import os; print(a)</code></pre>
 
