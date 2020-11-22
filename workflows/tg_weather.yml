@@ -36,6 +36,18 @@ jobs:
             The ${{ github.event_name }} event triggered final step.
             <pre><code class="language-python">import os; print(a)</code></pre>
 
-            It might rain today,  the temperature is: <b>${{on.weather.outputs.daily[0].temp.day}}°</b>, <strong>${{on.weather.outputs.daily[0].weather[0].description}}</strong>
+            It might rain today,  the temperature is: <b>${{on.weather.outputs.daily[0].temp.day}}°</b>, ${{on.weather.outputs.daily[0].weather[0].description}}
             
             The weather is ${{on.weather.outputs.current.weather[0].description}} now, ${{on.weather.outputs.daily[0].temp.min}}~${{on.weather.outputs.daily[0].temp.min}}°, fell like ${{ on.weather.outputs.current.feels_like }}°, uv: ${{ on.weather.outputs.current.uvi }}
+
+            GITHUB_CONTEXT: ${{ toJson(github) }}
+            
+            JOB_CONTEXT: ${{ toJson(job) }}
+
+            STEPS_CONTEXT: ${{ toJson(steps) }}
+
+            RUNNER_CONTEXT: ${{ toJson(runner) }}
+
+            STRATEGY_CONTEXT: ${{ toJson(strategy) }}
+
+            MATRIX_CONTEXT: ${{ toJson(matrix) }}
