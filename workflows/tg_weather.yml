@@ -23,9 +23,17 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           format: html
           message: |
-            <a href="http://www.example.com/">new Тест</a>
+            <a href="http://www.example.com/">new [Тест]</a>
+            GITHUB_REPOSITORY 	${{ repo }}
+            GITHUB_ACTOR 	${{ repo.namespace }}
+            GITHUB_SHA 	${{ commit.sha }}
+            GITHUB_REF 	${{ commit.ref }}
+            GITHUB_WORKFLOW 	${{ github.workflow }}
+            GITHUB_ACTION 	${{ github.action }}
+            GITHUB_EVENT_NAME 	${{ github.event.name }}
+            GITHUB_EVENT_PATH 	${{ github.event.path }}
+            GITHUB_WORKSPACE 	${{ github.workspace }}
             The ${{ github.event_name }} event triggered final step.
             It might rain today,  the temperature is: ${{on.weather.outputs.daily[0].temp.day}}°, ${{on.weather.outputs.daily[0].weather[0].description}}
-            ####
             
             The weather is ${{on.weather.outputs.current.weather[0].description}} now, ${{on.weather.outputs.daily[0].temp.min}}~${{on.weather.outputs.daily[0].temp.min}}°, fell like ${{ on.weather.outputs.current.feels_like }}°, uv: ${{ on.weather.outputs.current.uvi }}
