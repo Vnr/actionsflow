@@ -20,6 +20,6 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
-            #Test github
+            Test github
             #The ${{ github.event_name }} event triggered final step.
             #It might rain today,  the temperature is: ${{on.weather.outputs.daily[0].temp.day}}°, ${{on.weather.outputs.daily[0].weather[0].description}}
