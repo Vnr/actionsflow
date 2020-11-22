@@ -25,7 +25,6 @@ jobs:
           message: |
             <a href="http://www.example.com/">new Тест</a>
             The ${{ github.event_name }} event triggered final step.
-            <br/>
             It might rain today,  the temperature is: ${{on.weather.outputs.daily[0].temp.day}}°, ${{on.weather.outputs.daily[0].weather[0].description}}
             ####
             
