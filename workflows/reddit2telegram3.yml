@@ -1,0 +1,18 @@
+name: Send a telegram message when new hot subreddit
+on:
+  reddit:
+    url: https://www.reddit.com/r/gameofthrones/new
+jobs:
+  telegram:
+    name: Send a telegram message
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send a telegram message
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          format: markdown
+          message: |
+            [${{ on.reddit.outputs.title }}](${{on.reddit.outputs.link}})
+            ${{on.reddit.outputs.pubDate}}
