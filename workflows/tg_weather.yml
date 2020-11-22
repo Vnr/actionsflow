@@ -21,7 +21,7 @@ jobs:
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
-          format: рhtml
+          format: html
           message: |
             <a href="http://www.example.com/">new Тест</a>
             The ${{ github.event_name }} event triggered final step.
