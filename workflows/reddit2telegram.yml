@@ -1,7 +1,7 @@
 name: Send a telegram message when new hot subreddit
 on:
   reddit:
-    url: https://reddit.com/r/news/
+    url: https://www.reddit.com/r/gameofthrones/
 jobs:
   telegram:
     name: Send a telegram message
@@ -13,6 +13,5 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
-            ${{ on.reddit.outputs.title }}
-            ${{on.reddit.outputs.link}}
+            [${{ on.reddit.outputs.title }}](${{on.reddit.outputs.link}})
             ${{on.reddit.outputs.pubDate}}
