@@ -7,8 +7,8 @@ on:
       lon: 37.118092
       units: metric
     config:
-      #every: "*/10 * * * *"
-      every: 0
+      every: "*/20 * * * *"
+      #every: 0
     timeZone: Europe/Moscow
     #filter:
       #"daily.0.weather.0.main":
