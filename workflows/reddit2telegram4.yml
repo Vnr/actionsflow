@@ -1,9 +1,8 @@
 name: Send a telegram message when new hot subreddit2
 on:
   reddit:
-    url: https://www.reddit.com/r/hearthstone/new
+    url: https://www.reddit.com/r/news/
     #source: json
-    every: 0
     config:
       limit: 10
 jobs:
