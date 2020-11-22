@@ -1,7 +1,7 @@
 name: Send a telegram message when new hot subreddit2
 on:
   reddit:
-    url: https://www.reddit.com/r/hearthstone/
+    url: https://www.reddit.com/r/hearthstone/new
     #source: json
     every: 0
     config:
