@@ -7,8 +7,8 @@ on:
       lon: 37.118092
       units: metric
     config:
-      every: "*/20 * * * *"
-    timeZone: UTC
+      every: "*/10 * * * *"
+    timeZone: "Europe/Moscow"
     #filter:
       #"daily.0.weather.0.main":
       #  $eq: Rain
@@ -35,4 +35,4 @@ jobs:
 
             It might rain today,  the temperature is: <b>${{on.weather.outputs.daily[0].temp.day}}°</b>, ${{on.weather.outputs.daily[0].weather[0].description}}
             
-            The weather is ${{on.weather.outputs.current.weather[0].description}} now, <b>${{ on.weather.outputs.current.temp }}°</b> (${{on.weather.outputs.daily[0].temp.min}}~${{on.weather.outputs.daily[0].temp.max}}°), fell like ${{ on.weather.outputs.current.feels_like }}°, uv: ${{ on.weather.outputs.current.uvi }}, pressure: ${{ (on.weather.outputs.current.pressure / 1.33322).toFixed(2) }} mmHg, wind: ${{ on.weather.outputs.current.wind_speed }} m/s
+            The weather is ${{on.weather.outputs.current.weather[0].description}} now, <b>${{ on.weather.outputs.current.temp }}°</b> (${{on.weather.outputs.daily[0].temp.min}}~${{on.weather.outputs.daily[0].temp.max}}°), fell like ${{ on.weather.outputs.current.feels_like }}°, uv: ${{ on.weather.outputs.current.uvi }}, pressure: ${{ (on.weather.outputs.current.pressure / 1.33322).toFixed(2) }} mmHg, wind: ${{ on.weather.outputs.current.wind_speed }} m/s, sunrise: ${{ new Date(on.weather.outputs.current.sunrise * 1000).toLocaleTimeString("ru-RU") }}
