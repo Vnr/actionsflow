@@ -1,0 +1,25 @@
+on:
+  script:
+    run: |
+      let items = [Math.random()*10];
+      return items;
+    config:
+      every: "*/10 * * * *"
+      #every: "* 12 * * *"
+  #schedule:
+    # * is a special character in YAML so you have to quote this string
+    #- cron:  '*/15 * * * *'
+jobs:
+  notify:
+    name: Send notifications
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send a telegram message
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            #Test github
+            #The ${{ github.event_name }} event triggered final step.
+            #It might rain today,  the temperature is: ${{on.weather.outputs.daily[0].temp.day}}°, ${{on.weather.outputs.daily[0].weather[0].description}}
