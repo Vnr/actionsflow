@@ -7,8 +7,9 @@ on:
       lon: 37.118092
       units: metric
     config:
-      every: "*/10 * * * *"
-    timeZone: "Europe/Moscow"
+      #every: "*/10 * * * *"
+      every: 0
+    timeZone: UTC
     #filter:
       #"daily.0.weather.0.main":
       #  $eq: Rain
