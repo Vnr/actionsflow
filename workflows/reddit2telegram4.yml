@@ -18,5 +18,5 @@ jobs:
           format: html
           message: |
             <a href="https://www.reddit.com${{ on.reddit.outputs.permalink }}">${{ on.reddit.outputs.title }}</a>
-            comments ${{ on.reddit.outputs.num_comments }}
-            date ${{ new Date((on.reddit.outputs.created + 3*3600) * 1000).toString() }}
+            comments: ${{ on.reddit.outputs.num_comments }}
+            date: ${{ new Date((on.reddit.outputs.created_utc) * 1000).toString() }}
