@@ -1,8 +1,8 @@
 name: Send a telegram message when new hot subreddit2
 on:
   reddit:
-    url: https://www.reddit.com/r/news/
-    #source: json
+    url: https://www.reddit.com/r/news/new/
+    source: json
     config:
       limit: 10
 jobs:
@@ -17,6 +17,6 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           format: html
           message: |
-            <a href="${{on.reddit.outputs.link}}">${{ on.reddit.outputs.title }}</a>
-            ${{on.reddit.outputs.contentSnippet}}
-            ${{on.reddit.outputs.pubDate}}
+            <a href="https://www.reddit.com${{ on.reddit.outputs.permalink }}">${{ on.reddit.outputs.title }}</a>
+            comments ${{ on.reddit.outputs.num_comments }}
+            date ${{ new Date((on.reddit.outputs.created + 3*3600) * 1000).toString() }}
