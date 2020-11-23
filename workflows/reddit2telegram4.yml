@@ -1,10 +1,10 @@
 name: Send a telegram message when new hot subreddit2
 on:
   reddit:
-    url: https://www.reddit.com/r/news/new/
+    url: https://www.reddit.com/r/news/
     source: json
     config:
-      limit: 10
+      #limit: 10
 jobs:
   telegram:
     name: Send a telegram message
