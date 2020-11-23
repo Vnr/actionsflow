@@ -7,7 +7,7 @@ on:
       lon: 37.118092
       units: metric
     config:
-      every: "*/40 * * * *"
+      every: "40 * * * *"
       #every: 0
     timeZone: Europe/Moscow
     #filter:
